@@ -1,4 +1,4 @@
-FROM faasm.azurecr.io/cpp-sysroot:0.4.0
+FROM tqiunimelb/cpp-sysroot:0.0.1
 ARG FAASM_PYTHON_VERSION
 
 SHELL ["/bin/bash", "-c"]
@@ -10,7 +10,7 @@ RUN apt update && apt install -y libssl-dev
 RUN mkdir -p /code \
     && git clone \
         -b v${FAASM_PYTHON_VERSION} \
-        https://github.com/faasm/python \
+        https://github.com/ScalaSSC/python \
         /code/python \
     && cd /code/python \
     && git submodule update --init -f third-party/cpp \
